@@ -1,0 +1,9 @@
+every 1 tick:
+    loop all players:   
+        if loop-player's active item is set:
+            set {_nbt} to nbt compound of loop-player's tool
+            set {_name} to string tag "minecraft:custom_data;gun_id" of {_nbt}
+            if {_name} = "revolver":
+                execute console command "/execute as %loop-player% at @s run function game_logic:guns/revolver"
+            if {_name} = "m4a1":
+                execute console command "/execute as %loop-player% at @s run function game_logic:guns/m4a1"       
