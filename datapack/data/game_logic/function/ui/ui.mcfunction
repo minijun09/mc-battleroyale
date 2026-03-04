@@ -1,0 +1,6 @@
+execute as @a store result score @s max_ammo run data get entity @s SelectedItem.components."minecraft:custom_data".max_ammo
+execute as @a store result score @s ammo run data get entity @s SelectedItem.components."minecraft:custom_data".ammo
+
+execute as @a if items entity @s weapon.mainhand *[custom_data~{gun:"true"}] if score @s ammo = @s max_ammo run title @s actionbar [{"text":"[ ","color":"green"},{"score":{"name":"@s","objective":"ammo"},"color":"green"},{"text":" / ","color":"green"},{"score":{"name":"@s","objective":"max_ammo"},"color":"green"},{"text":" ]","color":"green"}]
+execute as @a if items entity @s weapon.mainhand *[custom_data~{gun:"true"}] if score @s ammo < @s max_ammo unless score @s ammo matches 0 run title @s actionbar [{"text":"[ ","color":"gold"},{"score":{"name":"@s","objective":"ammo"},"color":"gold"},{"text":" / ","color":"gold"},{"score":{"name":"@s","objective":"max_ammo"},"color":"gold"},{"text":" ]","color":"gold"}]
+execute as @a if items entity @s weapon.mainhand *[custom_data~{gun:"true"}] if score @s ammo matches 0 run title @s actionbar [{"text":"[ ","color":"dark_red","bold":true},{"score":{"name":"@s","objective":"ammo"},"color":"red"},{"text":" / ","color":"dark_red"},{"score":{"name":"@s","objective":"max_ammo"},"color":"red"},{"text":" ]","color":"dark_red","bold":true}]

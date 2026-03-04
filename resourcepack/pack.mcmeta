@@ -1,0 +1,9 @@
+{
+    "pack": {
+        "pack_format": 32,
+        "min_format": [32,0],
+        "max_format": [99,0],
+        "supported_formats": [32, 99],
+        "description": "Ochak Battle-Royale Resource Pack REVISION-4"
+	}
+}

@@ -1,0 +1,10 @@
+{
+  "values": [
+    "game_logic:value_loop",
+    "game_logic:main_logic/mag_loop",
+    "game_logic:ui/ui",
+    "game_logic:grenades/impact_grenade",
+    "game_logic:grenades/smoke_grenade",
+    "game_logic:grenades/smoke_timer"
+  ]
+}
