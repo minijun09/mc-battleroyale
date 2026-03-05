@@ -5,8 +5,8 @@ execute if score @s bullet_age matches 1.. run scoreboard players remove @s bull
 tp @s ^ ^ ^0.4
 
 #주변몹 감지 및 데미지
-execute if score @s bullet_age matches 0 positioned ~-0.15 ~-0.15 ~-0.15 as @e[limit=1,type=!#game_logic:not_mob,dx=0] positioned ~-0.7 ~-0.7 ~-0.7 if entity @s[dx=0] positioned ~0.85 ~0.85 ~0.85 run damage @s 1 minecraft:arrow by @p
-execute if score @s bullet_age matches 0 positioned ~-0.15 ~-0.15 ~-0.15 as @e[limit=1,type=!#game_logic:not_mob,dx=0] positioned ~-0.7 ~-0.7 ~-0.7 if entity @s[dx=0] positioned ~0.85 ~0.85 ~0.85 run kill @p[tag=bullet]
+execute if score @s bullet_age matches 0 positioned ~-0.15 ~-0.15 ~-0.15 as @e[limit=1,type=!#game_logic:not_mob,dx=0] positioned ~-0.7 ~-0.7 ~-0.7 if entity @s[dx=0] positioned ~0.85 ~0.85 ~0.85 run damage @s 1 minecraft:generic
+execute if score @s bullet_age matches 0 positioned ~-0.15 ~-0.15 ~-0.15 as @e[limit=1,type=!#game_logic:not_mob,dx=0] positioned ~-0.7 ~-0.7 ~-0.7 if entity @s[dx=0] positioned ~0.85 ~0.85 ~0.85 run kill @e[tag=bullet,distance=..1]
 
 #벽 감지
 execute unless block ~ ~ ~ #minecraft:replaceable run kill @s
