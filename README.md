@@ -1,18 +1,23 @@
 # ochak Battle Royale Server
 
 [![minecraft version](https://img.shields.io/badge/1.21.11-minecraft?label=Minecraft&labelColor=67a346&color=grey)](https://www.minecraft.net/)
-[![GitHub License](https://img.shields.io/github/license/minijun09/ochak-brresourcepack)](https://www.gnu.org/licenses/gpl-3.0.html)
+[![GitHub License](https://img.shields.io/github/license/minijun09/ochak-battleroyale)](https://www.gnu.org/licenses/gpl-3.0.html)
 [![ochak youtube](https://img.shields.io/badge/%EC%98%A4%EC%B0%A9-ochak?logo=youtube&logoColor=white&logoSize=auto&label=YouTube&labelColor=ea333c&color=grey)](https://youtube.com/channel/UCmTPl_i44TJl4wYTHHEI8IQ?si=8P_Ckdw82qAESYdf)
 
 ochak's battle-royale server.  
 If you do not apply [this resource pack](https://github.com/minijun09/ochak-battleroyale/releases), items may appear broken.
 
 ---
+## Installation
+
+---
 
 ## Dependencies
 - Minecraft 1.21.11 Any Dedicated plugin-applicable server (ex. Spigot, Paper...)
 - [ochak-brresourcepack](https://github.com/minijun09/ochak-battleroyale/releases) resource pack
-- Skript plugin 
+- Skript plugin
+
+---
 
 ## Data Pack
 <details>
