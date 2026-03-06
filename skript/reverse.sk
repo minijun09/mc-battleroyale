@@ -1,0 +1,10 @@
+on damage:
+    if victim is a player:
+        if victim has totem of undying:
+            if damage >= victim's health:
+                cancel event
+                play sound "item.totem.use" with volume 1 and pitch 1 at victim to all players
+                play 100 totem of undying particles at victim's location
+                set health of victim to 10
+                remove 1 of totem of undying from victim's inventory
+                send "§6[!] %victim%이(가) 불사의 힘으로 죽음에서 벗어났습니다!" to victim

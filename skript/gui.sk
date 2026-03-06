@@ -1,0 +1,64 @@
+command /관리자메뉴:
+    trigger:
+        if player is op:
+            set {_gui} to chest inventory with 1 rows named "관리자메뉴"
+            set slot 1 of {_gui} to lime wool named "게임 메뉴 열기"
+            set slot 7 of {_gui} to barrel named "아이템 메뉴 열기"
+            open {_gui} to player
+        else:
+            send "권한이 없습니다." to player
+        
+on inventory click:
+    if event-inventory's name = "관리자메뉴":
+        cancel event
+        if event-inventory = player's inventory:
+            stop
+        if click type != left mouse button:
+            stop
+
+        if clicked slot = 1:
+            execute console command "function game_logic:game_gui_1"
+        if clicked slot = 7:
+            set {_gui} to chest inventory with 8 rows named "관리자 아이템 메뉴"
+            set slot 0 of {_gui} to barrel named "붕대"
+            set slot 1 of {_gui} to barrel named "구급상자"
+            set slot 2 of {_gui} to barrel named "진통제"
+            set slot 3 of {_gui} to barrel named "아드레날린"
+            set slot 4 of {_gui} to barrel named "에너지 드링크"
+            set slot 5 of {_gui} to barrel named "충수"
+            set slot 6 of {_gui} to barrel named "연막"
+            set slot 7 of {_gui} to barrel named "리볼버"
+            set slot 8 of {_gui} to barrel named ".357매그넘"
+            set slot 9 of {_gui} to barrel named "M4A1"
+            set slot 10 of {_gui} to barrel named "5.56mm STANAG 탄창"
+            open {_gui} to player
+
+    if event-inventory's name = "관리자 아이템 메뉴":
+        cancel event
+        if event-inventory = player's inventory:
+            stop
+        if click type != left mouse button:
+            stop
+        if clicked slot = 0:
+            execute console command "give %player% paper[item_name=""붕대"",lore=[{text:""체력을 즉시 2칸 회복합니다."",italic:false,color:blue}],item_model=""ochak:bandage"",max_stack_size=5,food={nutrition:0,saturation:0,can_always_eat:true},consumable={consume_seconds:1.5,animation:""eat"",has_consume_particles:false,sound:""minecraft:item.armor.equip_leather"",on_consume_effects:[{type:""minecraft:play_sound"",sound:""minecraft:item.armor.equip_leather""}]},potion_contents={custom_effects:[{id:""minecraft:instant_health"",amplifier:0,duration:0,show_particles:false}]},tooltip_display={hidden_components:[""minecraft:potion_contents""]}]"
+        if clicked slot = 1:
+            execute console command "give %player% orange_dye[item_name=""구급 상자"",lore=[{text:""체력을 즉시 4칸 회복합니다."",italic:false,color:blue}],item_model=""ochak:fak"",max_stack_size=1,food={nutrition:0,saturation:0,can_always_eat:true},consumable={consume_seconds:3,animation:""eat"",has_consume_particles:false,sound:""minecraft:item.armor.equip_leather"",on_consume_effects:[{type:""minecraft:play_sound"",sound:""minecraft:item.armor.equip_leather""}]},potion_contents={custom_effects:[{id:""minecraft:instant_health"",amplifier:1,duration:0,show_particles:false}]},tooltip_display={hidden_components:[""minecraft:potion_contents""]}]"
+        if clicked slot = 2:
+            execute console command "give %player% white_dye[item_name=""진통제"",lore=[{text:""저항 II 버프를 30초 부여합니다."",italic:false,color:blue}],item_model=""ochak:painkiller"",max_stack_size=5,food={nutrition:0,saturation:0,can_always_eat:true},consumable={consume_seconds:1,animation:""eat"",has_consume_particles:false,sound:""minecraft:item.armor.equip_leather"",on_consume_effects:[{type:""minecraft:play_sound"",sound:""minecraft:entity.player.burp""}]},potion_contents={custom_effects:[{id:""minecraft:resistance"",amplifier:0,duration:600,show_particles:true}]},tooltip_display={hidden_components:[""minecraft:potion_contents""]}]"
+        if clicked slot = 3:
+            execute console command "give %player% white_dye[item_name=""아드레날린"",lore=[{text:"""",italic:false,color:blue}],item_model=""ochak:injector"",max_stack_size=1,food={nutrition:0,saturation:0,can_always_eat:true},consumable={consume_seconds:0.5,animation:""eat"",has_consume_particles:false,sound:""minecraft:ui.hud.bubble_pop"",on_consume_effects:[{type:""minecraft:play_sound"",sound:""minecraft:item.spear.use""}]},potion_contents={custom_effects:[{id:""minecraft:absorption"",amplifier:1,duration:600,show_particles:false}]},tooltip_display={hidden_components:[""minecraft:potion_contents""]}]"
+        if clicked slot = 4:
+            execute console command "give %player% iron_ingot[item_name=""에너지 드링크"",lore=[{text:"""",italic:false,color:blue}],item_model=""ochak:drink"",max_stack_size=5,food={nutrition:0,saturation:0,can_always_eat:true},consumable={consume_seconds:1,animation:""eat"",sound:""minecraft:entity.generic.drink"",has_consume_particles:false,on_consume_effects:[{type:""minecraft:play_sound"",sound:""minecraft:ui.hud.bubble_pop""},{type:""minecraft:apply_effects"",effects:[{id:""minecraft:speed"",amplifier:0,duration:600}]}]},tooltip_display={hidden_components:[""minecraft:potion_contents""]}]"
+        if clicked slot = 5:
+            execute console command "give %player% snowball[custom_data={grenade_type:""impact""},item_name=""충수"",lore=[{text:"""",italic:false,color:blue}],max_stack_size=1]"
+        if clicked slot = 6:
+            execute console command "give %player% snowball[custom_data={grenade_type:""smoke""},item_name=""연막"",lore=[{text:"""",italic:false,color:blue}],max_stack_size=1]"
+        if clicked slot = 7:
+            execute console command "give %player% copper_ingot[item_name=""리볼버""lore=[{text:"""",italic:false,color:blue}],custom_data={gun:""true"",gun_id:revolver},item_model=""ochak:revolver"",food={nutrition:0,saturation:0,can_always_eat:true},max_stack_size=1,consumable={consume_seconds:2147483647, animation:""none""}]"
+        if clicked slot = 8:
+            execute console command "give %player% minecraft:copper_nugget[item_name="".357 매그넘"",lore=[{text:"""",italic:false,color:blue}],item_model=""ochak:dot357_magnum"",max_stack_size=60]"
+        if clicked slot = 9:
+            execute console command "give %player% copper_ingot[item_name=""M4A1""lore=[{text:"""",italic:false,color:blue}],custom_data={gun:""true"",gun_id:m4a1},item_model=""ochak:m4a1"",food={nutrition:0,saturation:0,can_always_eat:true},max_stack_size=1,consumable={consume_seconds:2147483647, animation:""none""}] 1"
+        if clicked slot = 10:
+            execute console command "give %player% minecraft:iron_nugget[item_name=""5.56mm STANAG 탄창"",lore=[{text:"""",italic:false,color:blue}],item_model=""ochak:mag_556stanag"",max_stack_size=4]"
+        
