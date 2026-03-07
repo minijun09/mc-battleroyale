@@ -5,4 +5,4 @@ execute unless score @s revolver_cooldown matches 0 run return fail
 #함수 실행
 scoreboard players remove @s revolver_ammo 1 
 scoreboard players set @s revolver_cooldown 10
-function game_logic:main_logic/revolver_use
+function game_logic:main_logic/revolver/revolver_use

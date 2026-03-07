@@ -6,4 +6,4 @@ every 1 tick:
             if {_name} = "revolver":
                 execute console command "/execute as %loop-player% at @s run function game_logic:guns/revolver"
             if {_name} = "m4a1":
-                execute console command "/execute as %loop-player% at @s run function game_logic:guns/m4a1"       
+                execute console command "/execute as %loop-player% at @s run function game_logic:guns/m4a1"

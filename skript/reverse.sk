@@ -4,7 +4,7 @@ on damage:
             if damage >= victim's health:
                 cancel event
                 play sound "item.totem.use" with volume 1 and pitch 1 at victim to all players
-                play 100 totem of undying particles at victim's location
+                play 100 totem of undying particles at victim's location to all players
                 set health of victim to 10
                 remove 1 of totem of undying from victim's inventory
                 send "§6[!] %victim%이(가) 리버스 카드를 사용하여 삶과 죽음을 맞바꿨습니다!" to victim

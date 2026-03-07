@@ -11,4 +11,4 @@ playsound minecraft:entity.generic.explode player @a ~ ~ ~ 0.6 2
 execute as @e[tag=bullet] at @s run function game_logic:main_logic/revolver_raycast_loop
 
 #총기 반동 세팅
-execute if items entity @s weapon.mainhand *[custom_data~{gun_id:"revolver"}] run tp @s ~ ~ ~ ~ ~-10
+execute if items entity @s weapon.mainhand *[custom_data~{gun_id:"revolver"}] run tp @s ~ ~ ~ ~ ~-20
