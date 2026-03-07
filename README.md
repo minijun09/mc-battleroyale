@@ -120,7 +120,7 @@ input resource pack URL in the **server.properties**. (ex. resource-pack=[URL])
 
 ---
 
-# Skript
+## Skript
 <details>
 <summary>game logic</summary>
 <ul>
