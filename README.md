@@ -12,7 +12,7 @@ If you do not apply [this resource pack](https://github.com/minijun09/ochak-batt
 - Minecraft 1.21.11 Any Dedicated plugin-applicable server (ex. Spigot, Paper...)
 - [ochak-brresourcepack](https://github.com/minijun09/ochak-battleroyale/releases) resource pack
 - Skript plugin
-- SkQuery plugin addon
+- SkBee plugin addon
 
 ---
 
